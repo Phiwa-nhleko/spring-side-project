@@ -1,10 +1,25 @@
 package za.co.myapplication.example.domain.dtos.customer;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 
+@Document("customer")
 public class CustomerDto implements Serializable {
     private static final long serialVersionUID = 5615373114988963343L;
+
+    @Id
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     private String firstName;
     private String lastName;

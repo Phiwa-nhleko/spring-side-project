@@ -7,10 +7,11 @@ import java.util.List;
 
 
 public interface CustomerService {
-    List<CustomerDto> getCustomers () throws IOException;
-    CustomerDto getCutsomer (String id) throws IOException;
-    CustomerDto createCutsomer (CustomerDto customerDto) throws IOException;
-    CustomerDto updateCutsomer (CustomerDto customerDto) throws IOException;
-    CustomerDto deleteCutsomer (boolean isDeleted) throws IOException;
+    List<CustomerDto> getAllCustomers () throws IOException;
+    CustomerDto getCustomersById (String id) throws IOException;
+    CustomerDto getCustomersByName (String firstName) throws IOException;
+    CustomerDto createCustomers (CustomerDto customerDto) throws IOException;
+    CustomerDto updateCustomer (CustomerDto customerDto) throws IOException;
+    void deleteCustomers (String id) throws IOException;
 
 }
