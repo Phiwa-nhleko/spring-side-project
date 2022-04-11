@@ -6,11 +6,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import java.util.Collection;
 import java.util.Collections;
 
 @Configuration
+@EnableMongoRepositories(basePackages = {"za.co.myapplication.example.repositories"})
 public class MongoConfig extends AbstractMongoClientConfiguration {
     @Override
     protected String getDatabaseName() {
@@ -29,6 +31,6 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
 
     @Override
     public Collection getMappingBasePackages() {
-        return Collections.singleton("za.co.myapplication.example");
+        return Collections.singleton("za.co.myapplication.example.repositories");
     }
 }

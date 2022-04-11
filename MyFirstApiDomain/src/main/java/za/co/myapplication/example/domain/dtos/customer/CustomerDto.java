@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-@Document("customer")
+@Document(collation = "customer")
 public class CustomerDto implements Serializable {
     private static final long serialVersionUID = 5615373114988963343L;
 

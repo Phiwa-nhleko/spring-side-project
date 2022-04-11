@@ -1,5 +1,6 @@
 package za.co.myapplication.example.services.customers.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.co.myapplication.example.domain.dtos.customer.CustomerDto;
 import za.co.myapplication.example.repositories.customer.CustomerDao;
@@ -11,9 +12,9 @@ import java.util.List;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
-    private final CustomerDao customerRepository;
+    private  CustomerDao customerRepository;
 
-    public CustomerServiceImpl(CustomerDao customerRepository){
+    public void setCustomerDao(CustomerDao customerRepository){
         this.customerRepository = customerRepository;
     }
 
