@@ -22,13 +22,14 @@ public class CustomersController {
         this.customerService = customerService;
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public  ResponseEntity addCustomer(@RequestBody CustomerDto customerDto) throws IOException {
+        System.out.println("TEST REQUEST");
         customerService.createCustomers(customerDto);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<CustomerDto>> getAllCustomers() throws IOException {
         return ResponseEntity.ok(customerService.getAllCustomers());
     }

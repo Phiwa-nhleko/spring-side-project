@@ -10,6 +10,19 @@ import java.time.LocalDate;
 public class CustomerDto implements Serializable {
     private static final long serialVersionUID = 5615373114988963343L;
 
+    public CustomerDto() {
+    }
+
+    public CustomerDto(String firstName, String lastName, String nickname, LocalDate dateOfBirth, int age, String cellphoneNumber, String address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.nickname = nickname;
+        this.dateOfBirth = dateOfBirth;
+        this.age = age;
+        this.cellphoneNumber = cellphoneNumber;
+        this.address = address;
+    }
+
     @Id
     private String id;
 
